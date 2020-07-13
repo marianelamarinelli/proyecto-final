@@ -26,7 +26,7 @@ public class Bodega {
     private String correoElectronico;
     private List<Vino> listadoDeVino;
     
-    @Enumeration
+    
     private Zona zona;
     
 }
