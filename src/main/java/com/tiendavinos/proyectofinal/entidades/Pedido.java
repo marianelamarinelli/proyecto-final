@@ -10,6 +10,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.GenericGenerator;
@@ -22,7 +24,9 @@ public class Pedido {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @ManyToOne
     private Cliente cliente;
+    @ManyToMany
     private List<Vino> listadoVinos;
     private Double precioTotal;
     private String direccionEnvio;

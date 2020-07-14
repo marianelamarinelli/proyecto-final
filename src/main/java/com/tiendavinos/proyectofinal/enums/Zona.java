@@ -1,15 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tiendavinos.proyectofinal.enums;
 
-
-
 public enum Zona {
-    
-    VALLE_DE_UCO, LUJAN_DE_CUYO, ZONA_ESTE; 
-    
-    
+
+    VALLE_DE_UCO("Valle de Uco"), LUJAN_DE_CUYO("Luján de Cuyo"), ZONA_ESTE("Zona este");
+
+    private final String nombre;
+
+    private Zona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
 }

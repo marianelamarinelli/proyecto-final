@@ -1,21 +1,27 @@
 package com.tiendavinos.proyectofinal.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class Comentario {
+public class Comentario implements Serializable {
 
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
 
+    @ManyToOne
     private Cliente cliente;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
 
     @Size(max = 500)
@@ -49,16 +55,10 @@ public class Comentario {
         this.cliente = cliente;
     }
 
-    /**
-     * @return the fecha
-     */
     public Date getFecha() {
         return fecha;
     }
 
-    /**
-     * @param fecha the fecha to set
-     */
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }

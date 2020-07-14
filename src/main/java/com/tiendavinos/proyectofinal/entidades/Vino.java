@@ -4,6 +4,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
@@ -15,10 +17,13 @@ public class Vino {
     private String id;
 
     private String nombreVino;
+    @ManyToOne
     private Bodega bodega;
     private Integer capacidadBotella;
+    @ManyToOne
     private Foto foto;
     private Double precio;
+    @OneToMany
     private List<Comentario> listadoComentario;
     private String anioCosecha;
 
