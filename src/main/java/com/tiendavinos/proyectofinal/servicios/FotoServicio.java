@@ -3,6 +3,7 @@ package com.tiendavinos.proyectofinal.servicios;
 import com.tiendavinos.proyectofinal.entidades.Foto;
 import com.tiendavinos.proyectofinal.errores.ErrorServicio;
 import com.tiendavinos.proyectofinal.repositorios.FotoRepositorio;
+import java.io.IOException;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ public class FotoServicio {
 
             } catch (Exception e) {
                 System.err.println(e.getMessage());
+                throw new ErrorServicio("Hubo un error en el guardado de la foto");
             }
         }
 
