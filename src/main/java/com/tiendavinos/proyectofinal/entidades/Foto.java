@@ -28,81 +28,51 @@ public class Foto {
     @Basic(fetch = FetchType.LAZY)
     private byte[] contenido;
 
-
     public String getId() {
         return id;
     }
-
 
     public void setId(String id) {
         this.id = id;
     }
 
-
-
     /**
      * @return the nombre
      */
-
     public String getNombre() {
         return nombre;
     }
 
-
-
     /**
      * @param nombre the nombre to set
      */
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-
-
     /**
      * @return the mime
      */
-
     public String getMime() {
         return mime;
     }
 
-
-
     /**
      * @param mime the mime to set
      */
-
     public void setMime(String mime) {
         this.mime = mime;
     }
 
-
-
     /**
      * @return the contenido
      */
-
     public byte[] getContenido() {
         return contenido;
     }
 
-
     public void setContenido(byte[] contenido) {
         this.contenido = contenido;
     }
-    
-    
-    
-    
-
-    /**
-     * @param contenido the contenido to set
-     */
-    public void setContenido(byte[] contenido) {
-        this.contenido = contenido;
-    }
-
 
 }
